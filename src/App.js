@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
 import TODO from './TODO'
+import {Route,  Routes, BrowserRouter} from "react-router-dom"
+import Home from "./component/Home"
+import Wdct from "./component/Wdct"
+import Tempapp from "./component/Tempapp"
+import Menu from './Menu'
+
 
 const App = () => {
+  
   const [inputList, setInputList] = useState("")
   const [items, setItems] = useState([]);
   const itemEvent = (event) => {
@@ -24,6 +31,15 @@ const App = () => {
   }
 
   return <>
+  <Menu/>
+    
+    <Routes>
+        <Route exact path="home" component={Home}/>
+        <Route exact path ="weather" component={Wdct}/>
+        <Route exact path="weather" component={Tempapp}/>
+        <Route exact path="/" component={TODO}/>
+        </Routes>
+        
     <div className="main_div">
       <div className="center_div">
         <div className="head">
@@ -45,6 +61,9 @@ const App = () => {
         </div>
       </div>
     </div>
+    
   </>
+  
+ 
 };
 export default App;
