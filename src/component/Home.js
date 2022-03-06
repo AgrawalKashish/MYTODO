@@ -6,11 +6,17 @@ import webd from './images/webd.jpg'
 import js from './images/js.png'
 import html from './images/html.jpg'
 import css from './images/css.png'
+import { NavLink } from 'react-router-dom';
 
 export class Home extends Component {
   render() {
     return (
         <>
+         <div>
+        <NavLink  activeclassname="active_class" to ="/">HOME</NavLink>
+        <NavLink  activeclassname="active_class" to= "/weather">WEATHER</NavLink>
+        <NavLink  activeclassname="active_class" to ="/App">TODO</NavLink>
+        </div>
       <div style={{backgroundColor: "rgb(100, 15, 62)"}}>
        
 
